@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Chart
+from .serializers import ChartSerializer
 
-# Create your views here.
+class ChartViewSet(viewsets.ModelViewSet):
+    queryset = Chart.objects.all()
+    serializer_class = ChartSerializer
